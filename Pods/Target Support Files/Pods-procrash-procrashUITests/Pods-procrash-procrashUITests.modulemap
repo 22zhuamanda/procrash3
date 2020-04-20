@@ -1,0 +1,6 @@
+framework module Pods_procrash_procrashUITests {
+  umbrella header "Pods-procrash-procrashUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
