@@ -17,15 +17,19 @@ var databaseHandle: DatabaseHandle?
 var databaseHandle1: DatabaseHandle?
 var isOn = String()
 
+    @IBOutlet weak var onButton: UIButton!
     @IBAction func runButton(_ sender: Any) {
     print(isOn, "IHATESCHOOL")
         print("Button Pressed")
         ref = Database.database().reference()
         if isOn=="1"{
             self.ref.child("Status").child("IsOn").setValue("0")
+            onButton.setTitle("Stop", for:.normal)
         }
         else if isOn=="0"{
             self.ref.child("Status").child("IsOn").setValue("1")
+            onButton.setTitle("Start", for:.normal)
+
         }
         databaseHandle = ref?.child("Status").observe(.childAdded, with: {(snapshot) in
         let post = snapshot.value as? String
