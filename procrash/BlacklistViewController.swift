@@ -10,7 +10,12 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
-class BlacklistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BlacklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+   
+    
+ 
+    
+ 
     
     
     var black_sites = [Int:String]()
@@ -22,6 +27,9 @@ class BlacklistViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var blackTableView: UITableView!
+    
+    var searchSite = [String]()
+    var searching = false
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBAction func add(_ sender: Any) {
@@ -37,6 +45,7 @@ class BlacklistViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func testingButton(_ sender: Any) {
    for (items) in siteNames
    {
+    
     for (_,value) in items {
         if let content = items["Sites"] as? [String]
         {
@@ -47,15 +56,24 @@ class BlacklistViewController: UIViewController, UITableViewDataSource, UITableV
             }
         }
     }
+    
     }
     print(postData)
     }
     
+    @IBAction func printPost(_ sender: Any) {
+        
+        //print(postData)
+        blackTableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let ref = Database.database().reference(withPath: "Blacklist")
-        
-        //print(ref)
+      
+        blackTableView.dataSource = self
+        blackTableView.delegate = self
+        searchBar.delegate = self
       
         ref = Database.database().reference()
         databaseHandle = ref?.child("Blacklist").observe(.childAdded, with: { (snapshot) in
@@ -65,16 +83,80 @@ class BlacklistViewController: UIViewController, UITableViewDataSource, UITableV
     //conditional binding
     if let actualPost = postDict {
         self.siteNames.append(actualPost)
-            print("Hi World")} })
-    //tableView.reloadData()
+        
+         
+         for (_,value) in actualPost {
+             if let content = actualPost["Sites"] as? [String]
+             {
+                 print(content)
+                 for i in content
+                 {
+                    if(self.postData.contains(i) == false)
+                    {
+                        self.postData.append(i)
+                        self.blackTableView.reloadData()
+                    }
+                  
 
+                 }
+             }
+         }
+         
 
-        blackTableView.dataSource = self
-        blackTableView.delegate = self
+            } }
+        )
 
         
         // Do any additional setup after loading the view.
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchSite = postData.filter({$0.prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        blackTableView.reloadData()
+    }
+    
+    
+    
+    //var searchSite
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searching)
+        {
+            return searchSite.count
+        }
+        else
+        {
+            return postData.count
+        }
+        
+        
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "blackCell")
+        cell?.textLabel?.text = postData[indexPath.row]
+        
+        
+        if searching
+        {
+            cell?.textLabel?.text = searchSite[indexPath.row]
+        }
+        else
+        {
+            cell?.textLabel?.text = postData[indexPath.row]
+        }
+        
+        
+        
+        return cell!
+     }
+    
+    
+}
+
+
     
     /*
     // MARK: - Navigation
@@ -84,27 +166,7 @@ class BlacklistViewController: UIViewController, UITableViewDataSource, UITableV
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+ */
 
-}
-extension ViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return postData.count
 
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-    cell.textLabel?.text = postData[indexPath.row]
-      return cell
-    }
-    //let website = //get website from database
-    //let type = //get type from databse
-  //  cell.websiteLabel!.text = website
-    //cell.typeLabel.text = type
-    
-
-  }
 
