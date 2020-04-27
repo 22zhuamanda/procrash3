@@ -19,8 +19,8 @@
 		5736D6F6240200DE005BECF7 /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736D6F5240200DE005BECF7 /* BlacklistViewController.swift */; };
 		5736D6F824020B9C005BECF7 /* blackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736D6F724020B9C005BECF7 /* blackCell.swift */; };
 		5736D6FA24020F66005BECF7 /* runAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736D6F924020F66005BECF7 /* runAppViewController.swift */; };
-		57610AC324565EDF00321D77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57610AC224565EDF00321D77 /* GoogleService-Info.plist */; };
 		57B29CB1240B4CBD00F0998E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B29CB0240B4CBD00F0998E /* FirebaseCore.framework */; };
+		65DC98E724566AF10087236D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65DC98E624566AF10087236D /* GoogleService-Info.plist */; };
 		6B673C16218526FBF2094418 /* Pods_procrashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9DEC3FE4C8E082E0334003 /* Pods_procrashTests.framework */; };
 		8D03C92BB147C970323485BE /* Pods_procrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5725CFF8415650894D11B4E /* Pods_procrash.framework */; };
 /* End PBXBuildFile section */
@@ -60,8 +60,8 @@
 		5736D6F5240200DE005BECF7 /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistViewController.swift; sourceTree = "<group>"; };
 		5736D6F724020B9C005BECF7 /* blackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackCell.swift; sourceTree = "<group>"; };
 		5736D6F924020F66005BECF7 /* runAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runAppViewController.swift; sourceTree = "<group>"; };
-		57610AC224565EDF00321D77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57B29CB0240B4CBD00F0998E /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DC98E624566AF10087236D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../CodingMinds/procrash2/procrash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AF956478B6273A25B165F69 /* Pods-procrash-procrashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-procrash-procrashUITests.debug.xcconfig"; path = "Target Support Files/Pods-procrash-procrashUITests/Pods-procrash-procrashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73950C548496DF195FEC2DF7 /* Pods-procrash-procrashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-procrash-procrashUITests.release.xcconfig"; path = "Target Support Files/Pods-procrash-procrashUITests/Pods-procrash-procrashUITests.release.xcconfig"; sourceTree = "<group>"; };
 		88583747EAD6AD8FE488C18C /* Pods-procrash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-procrash.release.xcconfig"; path = "Target Support Files/Pods-procrash/Pods-procrash.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 		5736D6C42401FDF9005BECF7 /* procrash */ = {
 			isa = PBXGroup;
 			children = (
-				57610AC224565EDF00321D77 /* GoogleService-Info.plist */,
 				5736D6C52401FDF9005BECF7 /* AppDelegate.swift */,
+				65DC98E624566AF10087236D /* GoogleService-Info.plist */,
 				5736D6C72401FDF9005BECF7 /* SceneDelegate.swift */,
 				5736D6C92401FDF9005BECF7 /* ViewController.swift */,
 				5736D6CB2401FDF9005BECF7 /* Main.storyboard */,
@@ -294,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5736D6D22401FDFD005BECF7 /* LaunchScreen.storyboard in Resources */,
-				57610AC324565EDF00321D77 /* GoogleService-Info.plist in Resources */,
+				65DC98E724566AF10087236D /* GoogleService-Info.plist in Resources */,
 				5736D6CF2401FDFD005BECF7 /* Assets.xcassets in Resources */,
 				5736D6CD2401FDF9005BECF7 /* Main.storyboard in Resources */,
 			);

@@ -26,16 +26,49 @@ class BlacklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     @IBOutlet weak var blackTableView: UITableView!
     
     var searchSite = [String]()
     var searching = false
+    var dbkey = "-M1rexaILOfsIJ1oM_G2"
+
     
     @IBOutlet weak var addButton: UIBarButtonItem!
-    @IBAction func add(_ sender: Any) {
-        print(searchBar.text)
-        print("Hello")
+ 
+    
+    @IBAction func addItem(_ sender: Any) {
+        //1. Create the alert controller.
+    print("Adding Item")
+        let alert = UIAlertController(title: "Add a new Site", message: "", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+        textField.text = ""
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "ADD", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            self.ref = Database.database().reference()
+            
+            
+                
+                    print("Text field: \(textField?.text)")
+                
+            self.ref.child(dbkey).child("Sites").push(textField?.text)
+                      //SEND TEXT TO DATABASE
+            //Reload the list so that it has current information
+                
+                }))
+        
+    // 4. Present the alert.
+    self.present(alert, animated: true, completion: nil)
+        
+        
+        
     }
+    
     
     @IBAction func deleteButton(_ sender: Any) {
         print("Hello World")
@@ -61,11 +94,7 @@ class BlacklistViewController: UIViewController, UITableViewDelegate, UITableVie
     print(postData)
     }
     
-    @IBAction func printPost(_ sender: Any) {
-        
-        //print(postData)
-        blackTableView.reloadData()
-    }
+
     
     
     override func viewDidLoad() {
