@@ -15,6 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="77E-Ai-Lnh">
                                 <rect key="frame" x="0.0" y="305" width="414" height="287"/>
                             </imageView>
@@ -25,6 +26,14 @@
                             <constraint firstItem="77E-Ai-Lnh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w1b-C4-LHF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="77E-Ai-Lnh" secondAttribute="bottom" constant="270" id="we7-b8-B7O"/>
                         </constraints>
+=======
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2020-04-30 at 1.41.34 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-2P-zF7">
+                                <rect key="frame" x="53" y="192" width="308" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+>>>>>>> 08984291db7dde9ab9796e1c57f4efaf91819b5c
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -34,6 +43,10 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="Image" width="100" height="100"/>
+=======
+        <image name="Screen Shot 2020-04-30 at 1.41.34 PM.png" width="234" height="85"/>
+>>>>>>> 08984291db7dde9ab9796e1c57f4efaf91819b5c
     </resources>
 </document>

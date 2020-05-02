@@ -19,9 +19,9 @@ var isOn = String()
 
     @IBOutlet weak var onButton: UIButton!
     @IBAction func runButton(_ sender: Any) {
-    print(isOn, "IHATESCHOOL")
-        print("Button Pressed")
+ 
         ref = Database.database().reference()
+        
         if isOn=="1"{
             self.ref.child("Status").child("IsOn").setValue("0")
             onButton.setTitle("Stop", for:.normal)
