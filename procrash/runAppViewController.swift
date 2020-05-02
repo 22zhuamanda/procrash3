@@ -21,6 +21,7 @@ var isOn = String()
     @IBAction func runButton(_ sender: Any) {
  
         ref = Database.database().reference()
+        
         if isOn=="1"{
             self.ref.child("Status").child("IsOn").setValue("0")
             onButton.setTitle("Stop", for:.normal)
