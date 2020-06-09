@@ -42,9 +42,11 @@ var isOn = String()
         })
         //self.ref.child("IsOn").getValue()
     }
+    @IBOutlet weak var roundedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.roundedButton.layer.cornerRadius = 23
         ref = Database.database().reference()
         databaseHandle = ref?.child("Status").observe(.childAdded, with: {(snapshot) in
         let post = snapshot.value as? String

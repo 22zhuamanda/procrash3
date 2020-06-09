@@ -21,7 +21,6 @@ class BlacklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     @IBOutlet weak var blackTableView: UITableView!
     
     var searchSite = [String]()
